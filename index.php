@@ -5,31 +5,42 @@
 /**
  * 1. Vérifiez si cette variable est vide, si c'est le cas, affichez vide si non affichez pas vide.
  */
+
 $var = 0;
 // TODO votre code ici.
 
+if(is_null($var)){
+    echo "vide";
+}
+else{
+    echo "pas vide";
+}
 
 
 
 /**
  * 2. Détruisez la variable déclarée, tentez de l'afficher ensuite en utilisant un print_r.
  */
+
 $eraseMe = "Please erase me !";
 // TODO votre code ici.
-
+unset($eraseMe);
+print_r($eraseMe);
 
 /**
  * 3. Déclarez vous même un tableau et utilisez var_dump pour afficher toutes les informations de debug.
  */
 // TODO votre code ici.
-
+$myArray = array("item1", "item2", "item3");
+var_dump($myArray);
 echo "<br>";
 
 /**
  * 4. Faites la même chose avec le même tableau, mais pour la méthode print_r.
  */
 // TODO votre code ici.
-
+$myArray = array("item1", "item2", "item3");
+print_r($myArray);
 echo "<br>";
 
 
@@ -39,7 +50,11 @@ echo "<br>";
  */
 $tab = ["test" => true, "name" => "Doe", "age" => 32];
 // TODO Votre code ici.
-
+if(isset($tab['doNotExists'])) {
+    echo 'Existe';
+} else {
+    echo 'Existe pas';
+}
 
 /**
  * 6. Créez une variable contenant:
@@ -63,3 +78,22 @@ $tab = ["test" => true, "name" => "Doe", "age" => 32];
  */
 
 // TODO votre code ici.
+$mybol = true;
+$mynumb = 5;
+$myflot = 1.1;
+$mystring = "test";
+
+function test($oui){
+    if (is_bool($oui)){
+        echo "Ma variable est de type: boolean";
+    }
+    if (is_int($oui)){
+        echo "Ma variable est de type: integer";
+    }
+    if (is_float($oui)){
+        echo "Ma variable est de type: float";
+    }
+    if (is_string($oui)){
+        echo "Ma variable est de type: string";
+    }
+}
